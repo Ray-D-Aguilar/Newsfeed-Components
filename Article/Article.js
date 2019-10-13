@@ -113,56 +113,56 @@ const data = [
 
 */
 
-function compCreator (object){
-    const div = document.createElement('div');
-    const h2 = document.createElement('h2');
-    const p = document.createElement('p');
-    const p1 = document.createElement('p');
-    const p2 = document.createElement('p');
-    const p3 = document.createElement('p');
-    const span = document.createElement('span');
+function compCreator(object) {
+  const div = document.createElement('div');
+  const h2 = document.createElement('h2');
+  const p = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const span = document.createElement('span');
 
-    div.classList.add('article');
-    p.classList.add('date');
-    span.classList.add('expandButton');
+  div.classList.add('article');
+  p.classList.add('date');
+  span.classList.add('expandButton');
 
-    // span.addEventListener('click', (e) => {
-    //     console.log("test");
-    // });
+  span.addEventListener('click', (e) => {
+    div.classList.toggle('article-open')
+  });
 
-    
-    // h2.textContent = object;
-    // p.textContent = object;
-    // p1.textContent = object;
-    // p2.textContent = object;
-    // p3.textContent = object;
+  // h2.textContent = object;
+  // p.textContent = object;
+  // p1.textContent = object;
+  // p2.textContent = object;
+  // p3.textContent = object;
 
-    h2.textContent = object.title;
-    p.textContent = object.date;
-    p1.textContent = object.firstParagraph;
-    p2.textContent = object.secondParagraph;
-    p3.textContent = object.thirdParagraph;
+  h2.textContent = object.title;
+  p.textContent = object.date;
+  p1.textContent = object.firstParagraph;
+  p2.textContent = object.secondParagraph;
+  p3.textContent = object.thirdParagraph;
+  span.textContent = "button";
 
-    div.appendChild(h2);
-    div.appendChild(p);
-    div.appendChild(p1);
-    div.appendChild(p2);
-    div.appendChild(p3);
-    div.appendChild(span);
-    return div;
-    
+  div.appendChild(h2);
+  div.appendChild(p);
+  div.appendChild(p1);
+  div.appendChild(p2);
+  div.appendChild(p3);
+  div.appendChild(span);
+  return div;
+
 };
 
 const articles = document.querySelector('.articles')
 
-data.map((element)=>{
+data.map((element) => {
   articles.appendChild(compCreator(element))
 })
 
 console.log(compCreator());
 
-/*Step 1: Create a function that creates a component. You will want your component to look like the template below: 
-  
+/*Step 1: Create a function that creates a component. You will want your component to look like the template below:
+
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
