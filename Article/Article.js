@@ -118,6 +118,11 @@ function compCreator (object){
     const h2 = document.createElement('h2');
     const p = document.createElement('p');
     const span = document.createElement('span');
+
+    div.classList.add('article');
+    p.classList.add('date');
+    span.classList.add('expandButton');
+
     span.addEventListener('click', (e) => {
         console.log("test");
     });
@@ -125,13 +130,13 @@ function compCreator (object){
     p.textContent = "Placeholder text";
     div.appendChild(h2);
     div.appendChild(p);
+    div.appendChild(span);
     return div;
     
 };
 
-compCreator();
+console.log(compCreator());
 
-console.log("https://gfycat.com/bruisedwindingdodobird-film-animation-transformation-dragon-ball-z");
 /*Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
