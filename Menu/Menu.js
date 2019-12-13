@@ -14,7 +14,7 @@ let menuItems = [
   Step 1: Write a function that will create a menu component as seen below:
 
   <div class="menu">
-    <ul>
+    <ul> 
       {each menu item as a list item}
     </ul>
   </div>

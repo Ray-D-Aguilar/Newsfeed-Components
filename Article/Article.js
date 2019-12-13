@@ -112,3 +112,87 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function compCreator(object) {
+  const div = document.createElement('div');
+  const h2 = document.createElement('h2');
+  const p = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const span = document.createElement('span');
+
+  div.classList.add('article');
+  p.classList.add('date');
+  span.classList.add('expandButton');
+
+  span.addEventListener('click', (e) => {
+    div.classList.toggle('article-open')
+  });
+
+  // h2.textContent = object;
+  // p.textContent = object;
+  // p1.textContent = object;
+  // p2.textContent = object;
+  // p3.textContent = object;
+
+  h2.textContent = object.title;
+  p.textContent = object.date;
+  p1.textContent = object.firstParagraph;
+  p2.textContent = object.secondParagraph;
+  p3.textContent = object.thirdParagraph;
+  span.textContent = "button";
+
+  div.appendChild(h2);
+  div.appendChild(p);
+  div.appendChild(p1);
+  div.appendChild(p2);
+  div.appendChild(p3);
+  div.appendChild(span);
+  return div;
+
+};
+
+const articles = document.querySelector('.articles')
+
+data.map((element) => {
+  articles.appendChild(compCreator(element))
+})
+
+console.log(compCreator());
+
+/*Step 1: Create a function that creates a component. You will want your component to look like the template below:
+
+  <div class="article">
+    <h2>{title of the article}</h2>
+    <p class="date">{date of the article}</p>
+
+    {three separate paragraph elements}
+
+    <span class='expandButton'></span>
+  </div>
+
+  Hint: You will need to use createElement more than once here!
+
+  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above. */
+
+//   function buttonCreator(buttonText){
+//     const button = document.createElement('button');
+
+//     button.textContent = buttonText;
+
+//     button.classList.add('button');
+
+//     button.addEventListener('click', (e) => {
+//         console.log('clicked!');
+//     });
+
+//     return button;
+// }
+
+// let firstButton = buttonCreator('Button 1');
+
+// let secondButton = buttonCreator('Button 2');
+
+// parent.appendChild(firstButton);
+// parent.appendChild(secondButton);
